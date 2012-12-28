@@ -1,8 +1,100 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>BoxPuppet</title>
-  <head>
-  <body>
-    <h1>BoxPuppet</h1>
-  </body>
+<head>
+  <title>BoxPuppet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css">
+  <link rel="stylesheet" href="css/boxpuppet.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37299321-1']);
+  _gaq.push(['_setDomainName', 'boxpuppet.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+    <script>
+      $(document).ready(function () {
+        function submitForm() {
+          var form_url = "https://docs.google.com/a/geekle.id.au/spreadsheet/formResponse?formkey=dEhpLXZNMUtmYzVCS1Z2X2RRMVEyd1E6MQ";
+          $.ajax({
+            url: form_url,
+            method: "GET",
+            data: {"entry.2.single": $("#email").val() }
+          })
+        }
+        $("#submit").click(function() {
+          submitForm();
+        });
+      });
+    </script>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+<div class="bg">
+<div class="intro">
+  <div class="row-fluid">
+    <h1 class="brand">BoxPuppet</h1>
+    <p>Puppet in the cloud.</p>
+  </div>
+</div>
+<div class="container-fluid signup" id="signup">
+  <h2>Interested?</h2>
+  <p class="lead">Join the beta invite list.</p>
+  <div class="input-append">
+    <form class="form-horizontal">
+      <fieldset>
+        <input class="span5" id="email" placeholder="your e-mail address" type="text">
+        <button class="btn btn-large btn-primary" type="button" id="submit">Go!</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+</div>
+<div class="info">
+  <div class="row-fluid">
+    <div class="span4">
+      <h2>In The Cloud.</h2>
+      <p>Using the latest version of puppet and hosted on Amazon Web Services, BoxPuppet takes the hassle out of setting up and maintaining a puppet master.</p>
+    </div>
+    <div class="span4">
+      <h2>Using GitHub.</h2>
+      <p>Pull your puppet manifests and modules from your public GitHub account.</p>
+    </div>
+    <div class="span4">
+      <h2>Simple To Use.</h2>
+      <p>Point your puppet client to BoxPuppet and begin managing your nodes.</p>
+      <p>It's that easy.</p>
+    </div>
+  </div>
+</div>
+<div class="closing">
+  <div class="row-fluid">
+    <div class="span12">
+      <h2 class="brand">BoxPuppet</h2>
+      <h3>Hosted puppet.</h3>
+    </div>
+  </div>
+
+</div>
+<div class="container-fluid footer-box">
+  <div class="row">
+    <div class="span2 offset11">
+      <p>&copy; BoxPuppet</p>
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
+
